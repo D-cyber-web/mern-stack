@@ -17,10 +17,9 @@ function Login() {
   const navigate = useNavigate()
   const dispatch = useDispatch()
 
-  const { user, isLoading, isError, isSuccess, message } = useSelector
-    (
-      (state) => state.auth
-    )
+  const { user, isLoading, isError, isSuccess, message } = useSelector(
+    (state) => state.auth
+  )
 
   useEffect(() => {
     if (isError) {
@@ -32,7 +31,6 @@ function Login() {
     }
 
     dispatch(reset())
-
   }, [user, isError, isSuccess, message, navigate, dispatch])
 
   const onChange = (e) => {
@@ -61,18 +59,17 @@ function Login() {
     <>
       <section className='heading'>
         <h1>
-          <FaSignInAlt />Login
+          <FaSignInAlt /> Login
         </h1>
-        <p>Please Login to your account</p>
+        <p>Login and start setting goals</p>
       </section>
 
-      <section className="form">
+      <section className='form'>
         <form onSubmit={onSubmit}>
-          
-          <div className="form-group">
+          <div className='form-group'>
             <input
-              type="email"
-              className="form-control"
+              type='email'
+              className='form-control'
               id='email'
               name='email'
               value={email}
@@ -80,11 +77,10 @@ function Login() {
               onChange={onChange}
             />
           </div>
-
-          <div className="form-group">
+          <div className='form-group'>
             <input
-              type="password"
-              className="form-control"
+              type='password'
+              className='form-control'
               id='password'
               name='password'
               value={password}
@@ -93,12 +89,11 @@ function Login() {
             />
           </div>
 
-          <div className="form-group">
-            <button type='submit' className="btn btn-block">
+          <div className='form-group'>
+            <button type='submit' className='btn btn-block'>
               Submit
             </button>
           </div>
-
         </form>
       </section>
     </>
